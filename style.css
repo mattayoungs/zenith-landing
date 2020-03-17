@@ -40,8 +40,12 @@ body * {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 30rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin-bottom: 10rem;
-  background-image: image("./zenith-assets/images/backgrounds/hero-bg-texture.png");
+  background: #ffffff url("./zenith-assets/images/backgrounds/hero-bg-texture.png") no-repeat center;
+  background-size: 100% 100%;
   width: 100%;
 }
 .hero__header {
@@ -51,14 +55,115 @@ body * {
   font-size: 24px;
   line-height: 32px;
   letter-spacing: 0.5px;
+  text-align: left;
+  color: #393939;
   max-width: 60%;
-  justify-self: flex-start;
+  align-self: flex-start;
+  margin-bottom: 80px;
+  margin-top: 80px;
 }
 .hero__card-img {
+  width: 100%;
+  max-width: 764px;
+}
+.hero__card-img img {
+  width: 100%;
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+}
+
+.features {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 10rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.features__heading {
+  font-family: "Futura";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.5px;
+  text-align: left;
+  background: linear-gradient(225.31deg, #ab00ff -34.29%, #007bff 136.11%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 80px;
+}
+.features__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.features__img {
   width: 100%;
+}
+.features__img img {
+  width: 100%;
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+}
+
+.features-card {
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 7px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 335px;
+  height: 105px;
+  padding: 10px;
+  margin-bottom: 1.5rem;
+}
+.features-card p {
+  font-family: "Futura";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 0.447369px;
+  color: #393939;
+  text-align: left;
+  width: 60%;
+}
+.features-card img {
+  height: 100%;
+}
+
+.integrations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 10rem;
+}
+.integrations__heading {
+  font-family: "Futura";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.5px;
+  text-align: left;
+  background: linear-gradient(225.31deg, #ab00ff -34.29%, #007bff 136.11%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.integrations__products {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: center;
+}
+.integrations__products img {
+  padding: 2rem;
+  width: 8rem;
 }
 
 /*# sourceMappingURL=style.css.map */

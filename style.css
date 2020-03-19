@@ -12,8 +12,8 @@ body * {
 .header {
   width: 100%;
   height: 5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 5vw;
+  padding-right: 5vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,13 +36,13 @@ body * {
 .header-nav {
   display: none;
 }
+
 .hero {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 30rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 5vw;
+  padding-right: 5vw;
   margin-bottom: 10rem;
   background: #ffffff url("./zenith-assets/images/backgrounds/hero-bg-texture.png") no-repeat center;
   background-size: 100% 100%;
@@ -65,6 +65,7 @@ body * {
 .hero__card-img {
   width: 100%;
   max-width: 764px;
+  margin-bottom: 80px;
 }
 .hero__card-img img {
   width: 100%;
@@ -73,8 +74,8 @@ body * {
 }
 
 .features {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 5vw;
+  padding-right: 5vw;
   margin-bottom: 10rem;
   display: flex;
   flex-direction: column;
@@ -97,6 +98,7 @@ body * {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 80px;
 }
 .features__img {
   width: 100%;
@@ -112,10 +114,10 @@ body * {
   border-radius: 7px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
   width: 100%;
-  max-width: 335px;
+  max-width: 400px;
   height: 105px;
   padding: 10px;
   margin-bottom: 1.5rem;
@@ -139,8 +141,8 @@ body * {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 5vw;
+  padding-right: 5vw;
   margin-bottom: 10rem;
 }
 .integrations__heading {
@@ -154,16 +156,125 @@ body * {
   background: linear-gradient(225.31deg, #ab00ff -34.29%, #007bff 136.11%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-bottom: 80px;
 }
 .integrations__products {
+  width: 100%;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  align-content: space-between;
+  justify-content: space-between;
   justify-content: center;
 }
-.integrations__products img {
-  padding: 2rem;
-  width: 8rem;
+.integrations__products__comps {
+  padding: 1rem;
+}
+.integrations__products__comps img {
+  width: 115px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  background: url(./zenith-assets/images/backgrounds/footer-bg-textures-combined.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.footer__heading {
+  font-family: "Futura";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.5px;
+  text-align: left;
+  margin-bottom: 80px;
+  color: #ffffff;
+}
+.footer__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80px;
+}
+.footer__form-input {
+  height: 1.2rem;
+  border-radius: 0.6rem;
+  width: 100%;
+}
+.footer__form-btn {
+  background-color: #ffffff;
+}
+.footer__links {
+  font-family: "Futura";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 0.447369px;
+  color: #393939;
+  color: #ffffff;
+  justify-self: flex-end;
+  align-self: flex-end;
+  list-style: none;
+  text-align: right;
+}
+
+@media (min-width: 1100px) {
+  .header-navicon {
+    display: none;
+  }
+
+  .header-nav {
+    display: flex;
+    align-items: center;
+  }
+  .header-nav__nav-items, .header-nav__cta-btn {
+    font-variant: small-caps;
+    margin-right: 1rem;
+  }
+  .header-nav__nav-items a, .header-nav__cta-btn a {
+    text-decoration: none;
+    font-family: "Futura";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: 0.447369px;
+    color: #393939;
+  }
+  .header-nav__cta-btn {
+    background-image: linear-gradient(225.31deg, #ab00ff -34.29%, #007bff 136.11%);
+    width: 8rem;
+    height: 2.6rem;
+    border-radius: 1.3rem;
+  }
+  .header-nav__cta-btn a {
+    color: white;
+    padding-bottom: 8px;
+  }
+
+  .hero {
+    background-image: url(./zenith-assets/images/backgrounds/hero-bg-cards.png), url(./zenith-assets/images/backgrounds/hero-bg-texture.png);
+  }
+
+  .integrations__products :nth-child(5) {
+    order: -1;
+  }
+
+  .features__container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .features-card {
+    max-width: 30%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -5,7 +5,11 @@
   src: url(./zenith-assets/fonts/futura-heavy.ttf) format(ttf);
 }
 
-$primary-grad: linear-gradient(225.31deg, #ab00ff -34.29%, #007bff 136.11%);
+$primary-grad: linear-gradient(
+  225.31deg,
+  rgba(171, 0, 255) -34.29%,
+  rgba(0, 123, 255) 136.11%
+);
 $card-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
 $img-shadow: 1px 1px 25px rgba(0, 0, 0, 0.25);
 $sect-margin: 10rem;
@@ -54,16 +58,19 @@ body * {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+
+@mixin content-margin {
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
 // BLOCKS
 .header {
   width: 100%;
   height: 5rem;
-
-  padding-left: 1rem;
-  padding-right: 1rem;
+  @include content-margin();
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -84,18 +91,13 @@ body * {
   }
   &-nav {
     display: none;
-    &__navitems {
-    }
-    &__cta-btn {
-    }
   }
 }
 
 .hero {
   @include center;
-  height: 30rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  // height: 30rem;
+  @include content-margin();
   margin-bottom: $sect-margin;
   background: #ffffff
     url("./zenith-assets/images/backgrounds/hero-bg-texture.png") no-repeat
@@ -113,17 +115,16 @@ body * {
   &__card-img {
     width: 100%;
     max-width: 764px;
+    margin-bottom: 80px;
     img {
       width: 100%;
       box-shadow: $img-shadow;
       border-radius: 7px;
-      // object-fit: cover;
     }
   }
 }
 .features {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  @include content-margin();
   margin-bottom: $sect-margin;
   @include center();
   &__heading {
@@ -133,6 +134,7 @@ body * {
   }
   &__container {
     @include center();
+    margin-bottom: 80px;
   }
   &__img {
     width: 100%;
@@ -146,12 +148,9 @@ body * {
 .features-card {
   box-shadow: $card-shadow;
   border-radius: 7px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  @include row();
   width: 100%;
-  max-width: 335px;
+  max-width: 400px;
   height: 105px;
   padding: 10px;
   margin-bottom: 1.5rem;
@@ -166,33 +165,99 @@ body * {
 }
 .integrations {
   @include center();
-  padding-left: 1rem;
-  padding-right: 1rem;
+  @include content-margin();
   margin-bottom: $sect-margin;
   &__heading {
     @include heading();
     @include grad-text();
+    margin-bottom: 80px;
   }
   &__products {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: space-between;
+    width: 100%;
+    @include row();
     justify-content: center;
-    img {
-      padding: 2rem;
-      width: 8rem;
+    &__comps {
+      padding: 1rem;
+      img {
+        width: 115px;
+      }
     }
   }
 }
+
 .footer {
+  @include center();
+  @include content-margin();
+  background: url(./zenith-assets/images/backgrounds/footer-bg-textures-combined.png)
+    no-repeat center;
+  background-size: 100% 100%;
   &__heading {
+    @include heading();
+    margin-bottom: 80px;
+    color: #ffffff;
   }
   &__form {
+    @include center();
+    margin-bottom: 80px;
     &-input {
+      height: 1.2rem;
+      border-radius: 0.6rem;
+      width: 100%;
     }
     &-btn {
+      background-color: #ffffff;
     }
   }
   &__links {
+    @include body-text();
+    color: #ffffff;
+    justify-self: flex-end;
+    align-self: flex-end;
+    list-style: none;
+    text-align: right;
+  }
+}
+// MEDIA
+@media (min-width: 1100px) {
+  .header-navicon {
+    display: none;
+  }
+  .header-nav {
+    display: flex;
+    align-items: center;
+    &__nav-items,
+    &__cta-btn {
+      a {
+        text-decoration: none;
+        @include body-text();
+      }
+      font-variant: small-caps;
+      margin-right: 1rem;
+    }
+    &__cta-btn {
+      background-image: $primary-grad;
+      width: 8rem;
+      height: 2.6rem;
+      border-radius: 1.3rem;
+      a {
+        color: white;
+        padding-bottom: 8px;
+      }
+    }
+  }
+  .hero {
+    background-image: url(./zenith-assets/images/backgrounds/hero-bg-cards.png),
+      url(./zenith-assets/images/backgrounds/hero-bg-texture.png);
+  }
+  .integrations__products :nth-child(5) {
+    order: -1;
+  }
+  .features__container {
+    width: 100%;
+    @include row();
+  }
+
+  .features-card {
+    max-width: 30%;
   }
 }

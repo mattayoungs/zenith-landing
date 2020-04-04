@@ -193,29 +193,59 @@ body * {
   background-size: 100% 100%;
   &__heading {
     @include heading();
+    margin-top: 80px;
     margin-bottom: 80px;
     color: #ffffff;
   }
   &__form {
     @include center();
     margin-bottom: 80px;
-    &-input {
-      height: 1.2rem;
-      border-radius: 0.6rem;
+    width: 33%;
+    &--feild {
+      border: none;
+      background-color: #a681ff;
+      margin-bottom: 1.5rem;
+      height: 3rem;
+      border-radius: 1.5rem;
       width: 100%;
     }
-    &-btn {
+    &--select {
+      background: no-repeat 95% 50%;
+      background-image: url(./zenith-assets/images/backgrounds/footer-form-arrow.png),
+        linear-gradient(#a681ff, #a681ff);
+      border: none;
+      background-color: #a681ff;
+      margin-bottom: 1.5rem;
+      height: 3rem;
+      border-radius: 1.5rem;
+      width: 100%;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    &--btn {
       background-color: #ffffff;
+      width: 8rem;
+      height: 3rem;
+      border-radius: 1.5rem;
     }
   }
+
   &__links {
     @include body-text();
+    margin-bottom: 80px;
     color: #ffffff;
     justify-self: flex-end;
     align-self: flex-end;
     list-style: none;
     text-align: right;
   }
+}
+.footer__form--feild ::placeholder {
+  position: absolute;
+  left: 20px;
+  color: #ffffff;
 }
 // MEDIA
 @media (min-width: 1100px) {
@@ -249,8 +279,20 @@ body * {
     background-image: url(./zenith-assets/images/backgrounds/hero-bg-cards.png),
       url(./zenith-assets/images/backgrounds/hero-bg-texture.png);
   }
+  .integrations__products :nth-child(1) {
+    order: 1;
+  }
+  .integrations__products :nth-child(2) {
+    order: 2;
+  }
+  .integrations__products :nth-child(3) {
+    order: 5;
+  }
+  .integrations__products :nth-child(4) {
+    order: 4;
+  }
   .integrations__products :nth-child(5) {
-    order: -1;
+    order: 3;
   }
   .features__container {
     width: 100%;
